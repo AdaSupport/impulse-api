@@ -1,14 +1,10 @@
 {
-  "author:": "Ada Engineers",
-  "main": "./src/api.js",
-  "name": "impulse-api",
-  "description": "A quick and efficient Api with Express under the hood.",
+  "name": "@adasupport/impulse-api",
   "author": {
     "name": "Ada Support"
   },
   "main": "./src/api.js",
-  "name": "impulse-api",
-  "description": "Fork of a legacy dependency",
+  "description": "Fork of a dependency for legacy handoffs",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
