@@ -1,15 +1,12 @@
 {
-<<<<<<< Updated upstream
   "author:": "Dan L <dan.lampman@gmail.com>",
   "main": "./src/api.js",
   "name": "impulse-api",
   "description": "A quick and efficient Api with Express under the hood.",
-=======
   "author:": "Ada Support",
   "main": "./src/api.js",
   "name": "impulse-api",
   "description": "Fork of a legacy dependency",
->>>>>>> Stashed changes
   "license": "MIT",
   "pre-commit": [
     "lint",
