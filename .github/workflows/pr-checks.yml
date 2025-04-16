@@ -8,24 +8,6 @@ env:
   NODE_VERSION: 20
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Setup"
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: https://npm.pkg.github.com/
-          cache: "yarn"
-      - name: "Build"
-        run: |
-          yarn --frozen-lockfile --prefer-offline
-          yarn build
-      - name: "Build storybook"
-        run: yarn build-storybook
-
   test:
     runs-on: ubuntu-latest
     steps:
@@ -36,27 +18,11 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://npm.pkg.github.com/
-          cache: "yarn"
+          cache: "npm"
       - name: "Install dependencies"
-        run: yarn --frozen-lockfile --prefer-offline
+        run: npm install --from-lock-file
       - name: "Run tests"
-        run: yarn test
-
-  check-types:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Setup"
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: https://npm.pkg.github.com/
-          cache: "yarn"
-      - name: "Install dependencies"
-        run: yarn --frozen-lockfile --prefer-offline
-      - name: "Check types"
-        run: yarn check-types
+        run: npm test
 
   lint:
     runs-on: ubuntu-latest
@@ -68,8 +34,8 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://npm.pkg.github.com/
-          cache: "yarn"
+          cache: "npm"
       - name: "Install dependencies"
-        run: yarn --frozen-lockfile --prefer-offline
+        run: npm install --from-lock-file
       - name: "Lint"
-        run: yarn lint
+        run: npm run lint

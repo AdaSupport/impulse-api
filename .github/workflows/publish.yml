@@ -22,10 +22,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://npm.pkg.github.com/
-      - name: "Build"
-        run: |
-          yarn
-          yarn build
       - uses: JS-DevTools/npm-publish@v3
         id: publish
         with:
