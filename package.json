@@ -1,17 +1,18 @@
 {
-  "author:": "Dan L <dan.lampman@gmail.com>",
+  "author:": "Ada Engineers",
   "main": "./src/api.js",
   "name": "impulse-api",
   "description": "A quick and efficient Api with Express under the hood.",
-  "author:": "Ada Support",
+  "author": {
+    "name": "Ada Support"
+  },
   "main": "./src/api.js",
   "name": "impulse-api",
   "description": "Fork of a legacy dependency",
   "license": "MIT",
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "test": "nyc --reporter=lcov --reporter=text-summary mocha",
