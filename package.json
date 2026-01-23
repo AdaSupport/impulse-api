@@ -24,7 +24,7 @@
     "express-xml-bodyparser": "0.3.0",
     "http-errors": "1.7.2",
     "jsonwebtoken": "^9.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "morgan": "1.9.1",
     "multer": "2.0.2",
     "path-to-regexp": "0.1.12",
